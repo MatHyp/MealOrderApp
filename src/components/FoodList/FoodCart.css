@@ -1,0 +1,53 @@
+.food-cart{
+    display: flex;
+    justify-content: space-between ;
+    background-color: #fff;
+    padding: 40px;
+    border-bottom: 2px solid rgb(201, 195, 195);
+}
+
+.food-cart:nth-last-child(1){
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.food-cart:nth-of-type(1){
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+}
+.meal-description h1{
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.meal-description p{
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.meal-description h2{
+    font-size: 20px;
+    font-weight: 900;
+    color: rgb(195, 60, 60);
+}
+
+.meal-actios p{
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.meal-actios input {
+    width: 45px;
+    height: 25px;
+}
+
+.meal-actios button{
+    margin-top: 10px;
+    width: 96px;
+    height: 30px;
+    border: none;
+    border-radius: 16px;
+    background-color: brown;
+    color: white;
+}

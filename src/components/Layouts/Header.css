@@ -1,0 +1,14 @@
+.header-img-container{
+    width: 100%;
+    z-index: 0;
+    overflow: hidden;
+    /* opacity: 0.5; */
+
+}
+
+.header-img-container img {
+    width: 110%;
+    height: 45vh;
+    object-fit: cover;
+    transform: rotateZ(-5deg) translateY(-6rem) translateX(-1rem);
+  }

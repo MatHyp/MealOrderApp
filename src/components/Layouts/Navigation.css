@@ -1,0 +1,28 @@
+.main-nav{
+    width: 100%;
+    background-color: brown;
+    /* opacity: 0.9; */
+
+}
+
+.ul-flex{
+    width: 60vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.ul-flex .nav-title{
+    font-size: 30px;
+    color: white;
+    font-weight: 900;
+}
+
+
+.ul-flex .cart-title{
+    font-size: 20px;
+    color: white;
+}
+
