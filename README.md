@@ -1,8 +1,7 @@
 # MealOrderApp
 
 
-To start app
+To start app:
 
 npm install 
-
 npm start

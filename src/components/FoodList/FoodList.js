@@ -1,39 +1,37 @@
 import React from 'react'
 import './FoodList.css'
 import FoodCart from './FoodCart'
-
-const DUMMY_MEALS = [
-  {
-    id: 'm1',
-    name: 'Sushi',
-    description: 'Finest fish and veggies',
-    price: 22.99,
-  },
-  {
-    id: 'm2',
-    name: 'Schnitzel',
-    description: 'A german specialty!',
-    price: 16.5,
-  },
-  {
-    id: 'm3',
-    name: 'Barbecue Burger',
-    description: 'American, raw, meaty',
-    price: 12.99,
-  },
-  {
-    id: 'm4',
-    name: 'Green Bowl',
-    description: 'Healthy...and green...',
-    price: 18.99,
-  },
-];
-
+import { useState, useEffect } from 'react';
 
 function FoodList(props) {
+  const [meals, setMeals] = useState([])
+
+  useEffect(() =>{
+
+    const fetchData = async () =>{
+      const response = await fetch('https://meal-e71bf-default-rtdb.europe-west1.firebasedatabase.app/meals.json');
+      const responseData = await response.json() 
+    
+      const data_arr = []
+      for(const key in responseData){
+        data_arr.push(
+          {
+            id: key,
+            name: responseData[key].name,
+            description: responseData[key].description,
+            price: responseData[key].price,
+          }
+        )
+      }
+
+      setMeals(data_arr);
+    }
+    fetchData();
+  },[])  
+
   return (
     <div className='food-list' style={{opacity: props.cart ? '0.1' : '0.9',}}>
-        <FoodCart meals={DUMMY_MEALS}/>
+        <FoodCart meals={meals}/>
     </div>
   )
 }
