@@ -1,0 +1,8 @@
+TO DO
+
+JS
+
+Store user inputs (UseReducer)
+Post stored user data from inputs and order to db 
+Checking form validation 
+Toggle Order Form 
