@@ -1,12 +1,19 @@
 import { useReducer } from 'react';
-import './FoodOrderForm.css'
-const FoodOrderForm = () =>{
 
-    const [order, dispatch] = useReducer([])    
+import FoodOrderFormReducer from './reducer/FoodOrderFormReducer';
+import './FoodOrderForm.css'
+
+const initialFormState = {
+    name: "",
+    street: "",
+    postCode: "",
+    city: ""
+}
+
+const FoodOrderForm = () =>{
+    const [order, dispatch] = useReducer(FoodOrderFormReducer, initialFormState)    
 
     return <div>
-
-
         <form>
             <p className='labels'>Your Name</p>
             <input type='text' className="labels"/>
