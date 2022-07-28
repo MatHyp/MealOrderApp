@@ -1,7 +1,6 @@
 import React, { Fragment, useContext } from 'react'
 import './FoodCart.css'
 import CartContext from '../store/cart-context'
-
 function FoodCart(props) {
     const cartCtx = useContext(CartContext)
 
@@ -26,6 +25,7 @@ function FoodCart(props) {
                     <p>Amount <input type='number' min='1' id={meal.id}/></p>
                     <button onClick={e => addToCartHandler(1, parseFloat(meal.id.slice(1)) - 1)}>Add</button>
                 </div>
+               
             </div>
             })}
         </Fragment> 

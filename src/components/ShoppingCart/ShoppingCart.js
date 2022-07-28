@@ -1,6 +1,8 @@
 import React from 'react'
 import './ShoppingCart.css'
 import CartContext from '../store/cart-context'
+import FoodOrderForm from './FoodOrderForm'
+
 import { useContext } from 'react'
 
 
@@ -27,6 +29,7 @@ function ShoppingCart(props) {
             <h1>Total Amount</h1>
             <p>$29.99</p>
         </div>
+        <FoodOrderForm />
         <div className='action-buttons'>
             <button onClick={props.hideCart}>Close</button>
             <button>Order</button>
