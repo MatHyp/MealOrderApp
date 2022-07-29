@@ -29,7 +29,7 @@ function ShoppingCart(props) {
             <h1>Total Amount</h1>
             <p>$29.99</p>
         </div>
-        <FoodOrderForm />
+        <FoodOrderForm cart={cartCtx}/>
         <div className='action-buttons'>
             <button onClick={props.hideCart}>Close</button>
             <button>Order</button>

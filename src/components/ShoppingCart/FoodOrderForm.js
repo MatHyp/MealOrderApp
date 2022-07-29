@@ -32,13 +32,28 @@ const reducer = (state,action) =>{
 
 }
 
-const FoodOrderForm = () =>{
+const FoodOrderForm = (props) =>{
     const [state, dispatch] = useReducer(reducer, initialFormState)
     
     const onChangeFormHandler = (e, dependency) => {
         dispatch({type: dependency , value: e.target.value});
     }
-    const onFormSubmit = (e) => {}
+    const onFormSubmit = (e) => {
+        e.preventDefault()
+        console.log(props);
+        const order = {
+            order: [...props.cart.item],
+            ClientData: state
+        }
+
+        fetch('https://meal-e71bf-default-rtdb.europe-west1.firebasedatabase.app/Orders.json',{
+            method: "POST",
+            body: JSON.stringify(order),
+            headers: {"Content-type": "application/json; charset=UTF-8"}
+        }).then(response => response.json()) 
+        .then(json => console.log(json))
+        .catch(err => console.log(err));
+    }
 
 
     return <div>
