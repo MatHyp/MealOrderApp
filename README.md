@@ -1,6 +1,6 @@
 # MealOrderApp
 
-Food ordering React web app, which allow user to add to a card and order selected meals from a list. Meals details are featched from FireBase database and user options are also published there after user choose.
+Food ordering React web app, which allow user to add to a card and order selected meals from a list. Meals details are featched from FireBase database and user options are also published there after user choose.fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 
 Technologies used: React.js, Css, FireBase.
 
