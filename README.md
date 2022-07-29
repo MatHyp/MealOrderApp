@@ -5,6 +5,7 @@ Food ordering React web app, which allow user to add to a card and order selecte
 Technologies used: React.js, Css, FireBase.
 
 ########## Setup ###########
+
 To start app:
 
 npm install 
