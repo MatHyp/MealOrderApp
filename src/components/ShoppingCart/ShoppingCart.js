@@ -3,11 +3,17 @@ import './ShoppingCart.css'
 import CartContext from '../store/cart-context'
 import FoodOrderForm from './FoodOrderForm'
 
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 
 
 function ShoppingCart(props) {
     const cartCtx = useContext(CartContext)
+    const [toogleForm,setToggleForm] = useState(false)
+
+    const orderFormHandler = () =>{
+        setToggleForm(!toogleForm)
+        console.log(toogleForm);
+    }
 
     return (
     <div className='cart-container'>    
@@ -29,11 +35,12 @@ function ShoppingCart(props) {
             <h1>Total Amount</h1>
             <p>$29.99</p>
         </div>
-        <FoodOrderForm cart={cartCtx}/>
-        <div className='action-buttons'>
+        {toogleForm ? <FoodOrderForm cart={cartCtx}/> : <div className='action-buttons'>
             <button onClick={props.hideCart}>Close</button>
-            <button>Order</button>
-        </div>
+            <button onClick={orderFormHandler}>Order</button>
+        </div>}
+        
+
     </div>
     
   )

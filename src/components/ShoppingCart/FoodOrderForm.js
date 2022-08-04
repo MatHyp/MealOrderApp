@@ -66,7 +66,10 @@ const FoodOrderForm = (props) =>{
             <input type='text' className="labels" value={state.postCode}  onChange={e => onChangeFormHandler(e, types.postCode)}/>
             <p className='labels'>City</p>
             <input type='text' className="labels" value={state.city} onChange={e => onChangeFormHandler(e, types.city)}/>
-            <input type='submit'/>
+            <div className='action-buttons'>
+                <button >Close</button>
+                <button onClick={onFormSubmit}>Order</button>
+            </div>
         </form>
     </div>
 }
