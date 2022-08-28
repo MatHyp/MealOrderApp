@@ -13,7 +13,7 @@ function FoodCart(props) {
             price: props.meals[count].price
         })}
 
-        return <Fragment>
+        return <>
             {props.meals.map((meal) =>{    
                 return <div className='food-cart' key={meal.id}>
                 <div className='meal-description'>
@@ -28,7 +28,7 @@ function FoodCart(props) {
                
             </div>
             })}
-        </Fragment> 
+        </> 
 }
 
 export default FoodCart

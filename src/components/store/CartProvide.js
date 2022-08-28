@@ -1,12 +1,10 @@
 import CardContext from './cart-context.js';
 import React , {useReducer, useState} from 'react';
 
-
 const defaultCartState = {
     items: [],
     totalAmount: 0
 }
-
 
 const cartReducer = (state,action) => {
     switch (action.type){
@@ -54,23 +52,28 @@ const CartProvider = (props) =>{
     const [prevClick, setPrevClick] = useState([]);
    
 
-    const addItemToCartHandler = item =>{
+    const addItemToCartHandler = (item, from) =>{
+        
         if(!prevClick.includes(item.id)){
-            dispatchCartAction({type: 'ADD' , item: item});
-            
-        }else{       
-            dispatchCartAction({type: 'ADD_AMOUNT', item: item})
-            console.log('add_amount');
+            dispatchCartAction({type: 'ADD' , item: item});            
         }
-
+        else if(from === 'shoppingCart'){
+            dispatchCartAction({type: 'ADD_AMOUNT', item: item})
+        }
+        else{       
+            dispatchCartAction({type: 'ADD_AMOUNT', item: item})
+        }
         setPrevClick(prevState => [...prevState, item.id])
     }
 
     const removeItemFromCartHandler = (id,item) =>{
         dispatchCartAction({type: 'REMOVE', id: id, item: item})
+        // let filteredItems = prevClick.filter(el => el !== id)
+        prevClick.pop(id)
+    
+        console.log(prevClick);
 
-        let filteredItems = prevClick.filter(el => el !== id)
-        setPrevClick(filteredItems)
+        setPrevClick(prevClick)
         
     }
 

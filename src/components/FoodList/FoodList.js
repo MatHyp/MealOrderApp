@@ -28,7 +28,6 @@ function FoodList(props) {
     }
     fetchData();
   },[])  
-
   return (
     <div className='food-list' style={{opacity: props.cart ? '0.1' : '0.9',}}>
         <FoodCart meals={meals}/>

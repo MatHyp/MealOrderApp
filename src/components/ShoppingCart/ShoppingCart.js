@@ -14,7 +14,7 @@ function ShoppingCart(props) {
         setToggleForm(!toogleForm)
         console.log(toogleForm);
     }
-
+    
     return (
     <div className='cart-container'>    
         {
@@ -26,11 +26,10 @@ function ShoppingCart(props) {
                 </div>
                 <p className='count'>x {it.amount}</p>
                 <button onClick={e => {cartCtx.removeItem(it.id)}}>-</button>
-                <button>+</button>
+                <button onClick={e => {cartCtx.addItem(it, 'shoppingCart')}}>+</button>
             </div>
             })
         }
-
         <div className='prices'>
             <h1>Total Amount</h1>
             <p>$29.99</p>
@@ -39,7 +38,7 @@ function ShoppingCart(props) {
             <button onClick={props.hideCart}>Close</button>
             <button onClick={orderFormHandler}>Order</button>
         </div>}
-        
+    
 
     </div>
     
